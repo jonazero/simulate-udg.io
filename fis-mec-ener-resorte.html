@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<!Descripción de la página en la búsqueda>
+		<meta name="description" content="Problemas animados de Física"/> 	
+		<!Ancho para dispositivo móvil>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+		
+		<!--Título del problema en la pestaña del navegador-->
+		<title>La compresión de un resorte</title>
+		
+		<link rel="shortcut icon" href="img/favicon.png"/>
+		<link rel=stylesheet href="css/estilos.css" type="text/css"/>
+		<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
+</script>
+		<script src="js/fis-mec-ener-resorte.js"></script>
+		
+	</head>
+	
+	<body>		
+		<header> 
+			<div class="encabezado" id="titulo">
+				<h1><a href="index.html" class="enlaceNegro">Simúlate</a></h1>
+			</div>
+			<div class="encabezado">
+				<a href="index.html#indexMecanica" class="enlaceNegro">Mecánica</a>
+			</div>
+			<div class="encabezado">
+				<a href="index.html#indexEnergia" class="enlaceNegro">Trabajo y energía</a>
+			</div>
+		</header>
+		
+		<main>
+			<div class="lin" id="problema">
+				<div id="enunciado">
+					<div id="titEnun">
+						<!--Título del problema en la página-->
+						<h2>La compresión de un &nbsp resorte</h2>
+						<img src="img/estrellas4.png" width="37%" align="top">
+					</div>
+					<div id="imgHecho">
+						<img id="imgCorrecto" src="img/hecho.png" width="30%" align="top">
+					</div>
+					<div id="btnNav">
+						<a href="fis-mec-ener-pelota_rebote.html"><img src="img/anterior.png" width="30%" align="top"></a>
+						<a href="index.html"><img src="img/home.png" width="30%" align="top"></a>
+						<a href="fis-mec-ener-potencia_regulador.html"><img src="img/siguiente.png" width="30%" align="top"></a>	
+					</div>
+					<br>
+					<!--Enunciado del problema
+					
+					Ubica el/los concepto(s) que están explícitamente en el enunciado y ponlos entre los <a> como aquí está la palabra velocidad. El número entre paréntesis del 'escribeApoyo' es el número del concepto cómo lo ordenaste en el .js (empezando desde cero).
+					
+					Los valores de las variables no se ponen aquí. Solo debes poner los <span> y nombrarlos como quieras con el 'id'. Este nombre es el que se hace referencia en el .js
+					
+					Texto en latex entre \( ... \)
+					
+					Las unidades entre <b> solo por formato.
+					-->
+					Un bloque de <span id="txtM"></span> <b>kg</b > se deja caer sobre un <a href="javascript:escribeApoyo(1)">resorte</a> vertical con una constante de fuerza de <span id="txtK"></span> <b>N/cm</b>. El bloque se pega al resorte, y el resorte se comprime <span id="txtY"></span> <b>cm</b> antes de alcanzar el reposo momentáneamente. Si la velocidad que tiene cuando comienza el contacto con el resorte se duplicara, ¿cuál sería la compresión máxima del resorte?
+								
+				</div>
+				<div id="opciones">
+					<br>
+					<div>
+						<button type="button" id="opcA" onclick="eligeOpcion('opcA')"></button>
+
+						<button type="button" id="opcB" onclick="eligeOpcion('opcB')"></button>
+					</div>
+					<div>
+						<button type="button" id="opcC" onclick="eligeOpcion('opcC')"></button>
+
+						<button type="button" id="opcD" onclick="eligeOpcion('opcD')"></button>
+					</div>
+				</div>
+				<div align="center" id="cajaBtnAyuda">
+					<br>
+					<button type="button" id="btnAyuda" onclick="escribeAyuda()">Aiúdame Papú!!</button>
+				</div>
+				<div>
+					<figure>
+					<!--Reemplaza el AutoSem-->
+						<img src="img/resorte0.png" align="center" width="120%" id="animacion">
+					</figure>
+				</div>
+				<div>
+					*Las imágenes son meramente ilustrativas; no representan estrictamente las escalas ni los datos del problema.
+				</div>
+			</div>
+			<div class="lin" id="apoyo"> </div>
+		</main>
+		
+		<footer>
+			<div class="piepagina" id="imgudg">			
+				<img src="img/udg.png" width="100%" align="top">
+			</div>
+			<div class="piepagina" id="enlacespie">
+				<ul>
+					<br>
+					<li><a href="acerca-de.html" class="enlaceNegro">Acerca de...</a>
+					<li><a href="https://www.udg.mx/" class="enlaceNegro">Universidad de Guadalajara</a></li>
+					<li><a href="http://www.cucei.udg.mx/" class="enlaceNegro">Centro Universitario de Ciencias Exactas e Ingenierías</a></li>
+					<li><a href="http://fisica.cucei.udg.mx/" class="enlaceNegro">Departamento de Física</a></li>
+					<!--<li><a href="mailto:simulate@udg.mx" class="enlaceNegro">simulate@udg.mx</a></li>-->
+				</ul>
+			</div>
+		</footer>
+		
+	</body>
+	
+
+
+
+</html>

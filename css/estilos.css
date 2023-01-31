@@ -1,0 +1,111 @@
+body{
+	/* background-color:#FF2D00; */
+}
+
+header{
+	background-color:#efb810;
+	
+}
+
+.encabezado{
+	display:inline-block;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+#titulo{
+	width:50%;
+}
+
+
+.lin{
+	display:table-cell;
+	padding:10px;
+}
+
+h2{
+	margin:0;
+}
+
+#problema{
+	width:60%;
+}
+
+#enunciado{
+	text-align:justify;
+}
+
+#titEnun{
+	display:table-cell;
+	width:50%;
+}
+
+#imgHecho{
+	display:table-cell;
+	width:25%;
+	visibility:hidden;
+}
+
+#btnNav{
+	display:table-cell;
+	width:24%;
+}
+
+#btnAyuda{
+	background-color:red;
+}
+
+#cajaBtnAyuda{
+	display:none;
+}
+
+#opcA, #opcB, #opcC, #opcD{
+	width:49%;
+	margin-top:5px;
+}
+
+#apoyo{
+	width:40%;
+	text-align:justify;
+	color:blue;
+}
+
+#animacion{
+	margin-left:-10%
+}
+
+footer{
+	background-color:#efb810;
+}
+
+.piepagina{
+	display:table-cell;
+	padding:10px;
+	padding-top:0px;
+}
+
+#imgudg{
+	width:10%;
+}
+
+#enlacespie{
+	width:90%;
+}
+
+a{
+	text-decoration:none;
+	color:blue;
+}
+
+a:hover{
+	color:red;
+}
+
+.enlaceNegro{
+	color:black;
+}
+
+
+
+
+

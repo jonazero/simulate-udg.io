@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<!Descripción de la página en la búsqueda>
+		<meta name="description" content="Problemas animados de Física"/> 	
+		<!Ancho para dispositivo móvil>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+		<title>Gol de campo</title>
+		<link rel="shortcut icon" href="img/favicon.png"/>
+		<link rel=stylesheet href="css/estilos.css" type="text/css"/>
+		<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
+</script>
+		<!-- <script type="text/javascript" async -->
+			<!-- src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> -->
+		<!-- </script> -->
+		<script src="js/fis-mec-cin23d-gol_de_campo.js"></script>
+	</head>
+	
+	<body>		
+		<header> 
+			<div class="encabezado" id="titulo">
+				<h1><a href="index.html" class="enlaceNegro">Simúlate</a></h1>
+			</div>
+			<div class="encabezado">
+				<a href="index.html#indexMecanica" class="enlaceNegro">Mecánica</a>
+			</div>
+			<div class="encabezado">
+				<a href="index.html#indexMov23d" class="enlaceNegro">Movimiento en 2 y 3 dimensiones</a>
+			</div>
+		</header>
+		
+		<main>
+			<div class="lin" id="problema">
+				<div id="enunciado">
+					<div id="titEnun">
+						<h2>Gol de campo</h2>
+						<img src="img/estrellas3.png" width="37%" align="top">
+					</div>
+					<div id="imgHecho">
+						<img id="imgCorrecto" src="img/hecho.png" width="30%" align="top">
+					</div>
+					<div id="btnNav">
+						<a href="fis-mec-cin1d-auto_semaforo.html"><img src="img/anterior.png" width="30%" align="top"></a>
+						<a href="index.html"><img src="img/home.png" width="30%" align="top"></a>
+						<a href="fis-mec-cin23d-cuerda.html"><img src="img/siguiente.png" width="30%" align="top"></a>	
+					</div>
+					<br>
+					El pateador de un equipo de futbol americano puede dar a la pelota una <a href="javascript:escribeApoyo(1)">velocidad</a> inicial de <span id="txtV0"></span> <b>ft/s</b>. ¿Dentro de qué zona angular deberá ser pateada la pelota si el pateador debe apenas anotar un gol de campo desde un punto situado a <span id="txtD"></span> <b>ft</b> enfrente	de los postes de gol cuya barra horizontal está a \(10\) <b>ft</b> sobre el terreno?					
+				</div>
+				<div id="opciones">
+					<br>
+					<div>
+						<button type="button" id="opcA" onclick="eligeOpcion('opcA')"></button>
+
+						<button type="button" id="opcB" onclick="eligeOpcion('opcB')"></button>
+					</div>
+					<div>
+						<button type="button" id="opcC" onclick="eligeOpcion('opcC')"></button>
+
+						<button type="button" id="opcD" onclick="eligeOpcion('opcD')"></button>
+					</div>
+				</div>
+				<div align="center" id="cajaBtnAyuda">
+					<br>
+					<button type="button" id="btnAyuda" onclick="escribeAyuda()">Aiúdame Papú!!</button>
+				</div>
+				<div>
+					<figure>
+						<img src="img/GolDeCampo0.png" align="center" width="120%" id="animacion">
+					</figure>
+				</div>
+				<div>
+					*Las imágenes son meramente ilustrativas; no representan estrictamente las escalas ni los datos del problema.
+				</div>
+			</div>
+			<div class="lin" id="apoyo"> </div>
+		</main>
+		
+		<footer>
+			<div class="piepagina" id="imgudg">			
+				<img src="img/udg.png" width="100%" align="top">
+			</div>
+			<div class="piepagina" id="enlacespie">
+				<ul>
+					<br>
+					<li><a href="acerca-de.html" class="enlaceNegro">Acerca de...</a>
+					<li><a href="https://www.udg.mx/" class="enlaceNegro">Universidad de Guadalajara</a></li>
+					<li><a href="http://www.cucei.udg.mx/" class="enlaceNegro">Centro Universitario de Ciencias Exactas e Ingenierías</a></li>
+					<li><a href="http://fisica.cucei.udg.mx/" class="enlaceNegro">Departamento de Física</a></li>
+					<!--<li><a href="mailto:simulate@udg.mx" class="enlaceNegro">simulate@udg.mx</a></li>-->
+				</ul>
+			</div>
+		</footer>
+		
+	</body>
+	
+
+
+
+</html>

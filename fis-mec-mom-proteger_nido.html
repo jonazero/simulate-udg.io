@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<!Descripción de la página en la búsqueda>
+		<meta name="description" content="Problemas animados de Física"/> 	
+		<!Ancho para dispositivo móvil>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+		<title>Protegiendo el nido</title>
+		<link rel="shortcut icon" href="img/favicon.png"/>
+		<link rel=stylesheet href="css/estilos.css" type="text/css"/>
+		<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
+</script>
+		<!-- <script type="text/javascript" async -->
+			<!-- src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> -->
+		<!-- </script> -->
+		<script src="js/fis-mec-mom-proteger_nido.js"></script>
+	</head>
+	
+	<body>		
+		<header> 
+			<div class="encabezado" id="titulo">
+				<h1><a href="index.html" class="enlaceNegro">Simúlate</a></h1>
+			</div>
+			<div class="encabezado">
+				<a href="index.html#indexMecanica" class="enlaceNegro">Mecánica</a>
+			</div>
+			<div class="encabezado">
+				<a href="index.html#indexMomento" class="enlaceNegro">Impulso y cantidad de movimiento</a>
+			</div>
+		</header>
+		
+		<main>
+			<div class="lin" id="problema">
+				<div id="enunciado">
+					<div id="titEnun">
+						<h2>Protegiendo el nido</h2>
+						<img src="img/estrellas2.png" width="37%" align="top">
+					</div>
+					<div id="imgHecho">
+						<img id="imgCorrecto" src="img/hecho.png" width="30%" align="top">
+					</div>
+					<div id="btnNav">
+						<a href="fis-mec-ener-potencia_regulador.html"><img src="img/anterior.png" width="30%" align="top"></a>
+						<a href="index.html"><img src="img/home.png" width="30%" align="top"></a>
+						<a href="fis-mec-mom-gato_brincando.html"><img src="img/siguiente.png" width="30%" align="top"></a>	
+					</div>
+					<br>
+					Para proteger a sus crías en el nido, los halcones peregrinos vuelan tras las aves de rapiña, como los cuervos, con gran rapidez. En uno de tales episodios, un halcón de <span id="txtMH"></span> <b>kg</b> que vuela a <span id="txtVH1"></span> <b>m/s</b> <a href="javascript:escribeApoyo(0)">choca</a> con un cuervo de <span id="txtMC"></span> <b>kg</b> que vuela a <span id="txtVC1"></span> <b>m/s</b>. El halcón choca con el cuervo en ángulo recto con respecto a su trayectoria original y rebota a <span id="txtVH2"></span> <b>m/s</b>. ¿En qué ángulo cambió el halcón la dirección de vuelo del cuervo?					
+				</div>
+				<div id="opciones">
+					<br>
+					<div>
+						<button type="button" id="opcA" onclick="eligeOpcion('opcA')"></button>
+
+						<button type="button" id="opcB" onclick="eligeOpcion('opcB')"></button>
+					</div>
+					<div>
+						<button type="button" id="opcC" onclick="eligeOpcion('opcC')"></button>
+
+						<button type="button" id="opcD" onclick="eligeOpcion('opcD')"></button>
+					</div>
+				</div>
+				<div align="center" id="cajaBtnAyuda">
+					<br>
+					<button type="button" id="btnAyuda" onclick="escribeAyuda()">Aiúdame Papú!!</button>
+				</div>
+				<div>
+					<figure>
+						<img src="img/halcon0.png" align="center" width="120%" id="animacion">
+					</figure>
+				</div>
+				<div>
+					*Las imágenes son meramente ilustrativas; no representan estrictamente las escalas ni los datos del problema.
+				</div>
+			</div>
+			<div class="lin" id="apoyo"> </div>
+		</main>
+		
+		<footer>
+			<div class="piepagina" id="imgudg">			
+				<img src="img/udg.png" width="100%" align="top">
+			</div>
+			<div class="piepagina" id="enlacespie">
+				<ul>
+					<br>
+					<li><a href="acerca-de.html" class="enlaceNegro">Acerca de...</a>
+					<li><a href="https://www.udg.mx/" class="enlaceNegro">Universidad de Guadalajara</a></li>
+					<li><a href="http://www.cucei.udg.mx/" class="enlaceNegro">Centro Universitario de Ciencias Exactas e Ingenierías</a></li>
+					<li><a href="http://fisica.cucei.udg.mx/" class="enlaceNegro">Departamento de Física</a></li>
+					<!--<li><a href="mailto:simulate@udg.mx" class="enlaceNegro">simulate@udg.mx</a></li>-->
+				</ul>
+			</div>
+		</footer>
+		
+	</body>
+	
+
+
+
+</html>

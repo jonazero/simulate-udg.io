@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<!Descripción de la página en la búsqueda>
+		<meta name="description" content="Problemas animados de Física"/> 	
+		<!Ancho para dispositivo móvil>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+		<title>Simúlate</title>
+		<link rel="shortcut icon" href="img/favicon.png"/>
+		<link rel=stylesheet href="css/estilos.css" type="text/css"/>
+		<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script>
+			if(localStorage.nombre == undefined) localStorage.nombre = "";
+			if(localStorage.univ == undefined) localStorage.univ = "";
+			if(localStorage.cod == undefined) localStorage.cod = "";
+			if(localStorage.registrado == undefined) localStorage.registrado = 0;
+			
+			function cargaInfo(){
+				if(localStorage.registrado == 1){
+					document.getElementById('nombreAlumno').innerText = localStorage.nombre;
+					document.getElementById('datosAlumno').innerText = localStorage.univ + ":" + localStorage.cod;
+					document.getElementById('imgInfo').style.display = "inline";
+					document.getElementById('imgPersona').style.display = "none";
+					document.getElementById('imgBorrar').style.display = "inline";
+					var elemento = document.createElement('br');
+					var espacioDiv = document.getElementById('espacioDatos').lastChild;
+					document.getElementById('espacioDatos').insertBefore(elemento, espacioDiv.nextSibling);
+				}
+				
+				//Sumar todos los intentos para saber si ya hubo actividad
+				var sumaIntentos = 0;
+				if(localStorage.intentosAvS == undefined) 
+				localStorage.intentosAvS = 0;
+				if(localStorage.intentosAutoSem == undefined) 
+				localStorage.intentosAutoSem = 0;
+				if(localStorage.intentosGolDeCampo == undefined) localStorage.intentosGolDeCampo = 0;
+				if(localStorage.intentosCuer == undefined) localStorage.intentosCuer = 0;
+				if(localStorage.intentosEscEle == undefined) localStorage.intentosEscEle = 0;
+				if(localStorage.intentosGloboAero == undefined) localStorage.intentosGloboAero = 0;
+				if(localStorage.intentosFric == undefined) localStorage.intentosFric = 0;
+				if(localStorage.intentosRuedaFortuna == undefined) localStorage.intentosRuedaFortuna = 0;
+				if(localStorage.intentosPelotaRebote == undefined) localStorage.intentosPelotaRebote = 0;
+				if(localStorage.intentosRES == undefined) 
+				localStorage.intentosRES = 0;
+				if(localStorage.intentosRegulador == undefined) 
+				localStorage.intentosRegulador = 0;
+				if(localStorage.intentosNido == undefined) localStorage.intentosNido = 0;
+				if(localStorage.intentosGatoBrincando == undefined) localStorage.intentosGatoBrincando = 0;
+				if(localStorage.intentosCan == undefined) 
+				localStorage.intentosCan = 0;
+				if(localStorage.intentosDisco == undefined) localStorage.intentosDisco = 0;
+				if(localStorage.intentosBolaBillar == undefined) localStorage.intentosBolaBillar = 0;
+				sumaIntentos = localStorage.intentosAvS + localStorage.intentosAutoSem + localStorage.intentosGolDeCampo + localStorage.intentosCuer + localStorage.intentosEscEle + localStorage.intentosGloboAero + localStorage.intentosFric + localStorage.intentosRuedaFortuna + localStorage.intentosPelotaRebote +
+				localStorage.intentosRES + localStorage.intentosRegulador + localStorage.intentosNido + localStorage.intentosGatoBrincando + localStorage.intentosCan + localStorage.intentosDisco + localStorage.intentosBolaBillar;
+				if(sumaIntentos > 0) document.getElementById('imgBorrar').style.display = "inline";
+				
+				
+				//Para poner marca verde, blanca o nada
+				
+				if(localStorage.correctoAvS == 1){
+					if(localStorage.intentosAvS > 3){
+						document.getElementById('hechoAvS').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoAvS').style.display = "inline";
+				}
+				
+				if(localStorage.correctoAutoSem == 1){
+					if(localStorage.intentosAutoSem > 3){
+						document.getElementById('hechoAutoSem').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoAutoSem').style.display = "inline";
+				}
+				
+				if(localStorage.correctoGolDeCampo == 1){
+					if(localStorage.intentosGolDeCampo > 3){
+						document.getElementById('hechoGolDeCampo').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoGolDeCampo').style.display = "inline";
+				}
+				
+				if(localStorage.correctoCuer == 1){
+					if(localStorage.intentosCuer > 3){
+						document.getElementById('hechoCuer').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoCuer').style.display = "inline";
+				}
+				
+				if(localStorage.correctoEscEle == 1){
+					if(localStorage.intentosEscEle > 3){
+						document.getElementById('hechoEscEle').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoEscEle').style.display = "inline";
+				}
+				
+				if(localStorage.correctoGloboAero == 1){
+					if(localStorage.intentosGloboAero > 3){
+						document.getElementById('hechoGloboAero').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoGloboAero').style.display = "inline";
+				}
+				
+				if(localStorage.correctoFric == 1){
+					if(localStorage.intentosFric > 3){
+						document.getElementById('hechoCono').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoCono').style.display = "inline";
+				}
+				
+				if(localStorage.correctoRuedaFortuna == 1){
+					if(localStorage.intentosRuedaFortuna > 3){
+						document.getElementById('hechoRuedaFortuna').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoRuedaFortuna').style.display = "inline";
+				}
+				
+				if(localStorage.correctoPelotaRebote == 1){
+					if(localStorage.intentosPelotaRebote > 3){
+						document.getElementById('hechoPelotaRebote').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoPelotaRebote').style.display = "inline";
+				}
+				
+				if(localStorage.correctoRES == 1){
+					if(localStorage.intentosRES > 3){
+						document.getElementById('hechoResorte').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoResorte').style.display = "inline";
+				}
+				
+				if(localStorage.correctoRegulador == 1){
+					if(localStorage.intentosRegulador > 3){
+						document.getElementById('hechoRegulador').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoRegulador').style.display = "inline";
+				}
+				
+				if(localStorage.correctoNido == 1){
+					if(localStorage.intentosNido > 3){
+						document.getElementById('hechoNido').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoNido').style.display = "inline";
+				}
+				
+				if(localStorage.correctoGatoBrincando == 1){
+					if(localStorage.intentosGatoBrincando > 3){
+						document.getElementById('hechoGatoBrincando').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoGatoBrincando').style.display = "inline";
+				}
+				
+				if(localStorage.correctoCan == 1){
+					if(localStorage.intentosCan > 3){
+						document.getElementById('hechoCanoa').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoCanoa').style.display = "inline";
+				}
+				
+				if(localStorage.correctoDisco == 1){
+					if(localStorage.intentosDisco > 3){
+						document.getElementById('hechoDisco').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoDisco').style.display = "inline";
+				}
+				
+				if(localStorage.correctoBolaBillar == 1){
+					if(localStorage.intentosBolaBillar > 3){
+						document.getElementById('hechoBolaBillar').src = "img/hechoAyuda.png";
+					}
+					document.getElementById('hechoBolaBillar').style.display = "inline";
+				}
+			}
+			
+			window.onload = cargaInfo;
+			
+			
+			//funciones íconos superiores
+			function info(){
+				alert('- Consigue el mayor número de marcas verdes contestando correctamente en los primeros tres intentos. \n- Procura trabajar siempre en la misma computadora y en el mismo navegador para registrar un solo avance.');
+			}
+			function borrar(){
+				if(confirm('Esta acción borrará tu avance, así como los datos que hayas guardado. ¿Estás seguro de que deseas continuar?')){
+					localStorage.registrado = 0;
+					localStorage.nombre = "";
+					localStorage.univ = "";
+					localStorage.cod = "";
+					document.getElementById('nombreAlumno').innerText = "";
+					document.getElementById('datosAlumno').innerText = "";
+					document.getElementById('espacioDatos').innerHTML = "";
+					document.getElementById('imgInfo').style.display = "none";
+					document.getElementById('imgPersona').style.display = "inline";
+					localStorage.clear();
+					location.reload();
+				}
+			}
+			function personalizar(){
+				if(confirm('¿Te gustaría personalizar tu avance con tu nombre, universidad y código de alumno? Esta acción NO borrará tu avance.')){
+					localStorage.nombre = prompt('Nombre:');
+					localStorage.univ = prompt('Universidad:');
+					localStorage.cod = prompt('Código de alumno:');
+					if(localStorage.nombre != "" && localStorage.univ != "" && localStorage.cod != ""){
+						localStorage.registrado = 1;
+						document.getElementById('nombreAlumno').innerText = localStorage.nombre;
+						document.getElementById('datosAlumno').innerText = localStorage.univ + ":" + localStorage.cod;
+						document.getElementById('imgInfo').style.display = "inline";
+						document.getElementById('imgPersona').style.display = "none";
+						var elemento = document.createElement('br');
+						var espacioDiv = document.getElementById('espacioDatos').lastChild;
+						document.getElementById('espacioDatos').insertBefore(elemento, espacioDiv.nextSibling);	
+					}
+					else{
+						alert('Olvidaste proporcionar algún dato.');	
+					}
+				}
+			}
+		</script>
+		<style type="text/css">
+			#imgInfo, #imgBorrar{
+				display:none;
+			}
+			.imgHecho{
+				display:none;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<header> 
+			<div class="encabezado" id="titulo">
+				<h1>Simúlate</h1>
+			</div>
+		</header>
+		
+		<main>
+			<div align="right"><span id="nombreAlumno"></span> <div id="espacioDatos"></div>
+				<span id="datosAlumno"></span> <br>
+				<a href="javascript:personalizar()"><img src="img/persona.png" width="3%" align="top" title="Personalizar avance" id="imgPersona"></a>
+				<a href="javascript:info()"><img src="img/info.png" width="3%" align="top" title="Información" id="imgInfo"></a>
+				<a href="javascript:borrar()"><img src="img/borrar.png" width="3%" align="top" title="Borrar avance" id="imgBorrar"></a>
+			</div>
+			<ul>
+				<li><h2>Física</h2></li>
+				<ul>
+					<li id="indexMecanica"><h3>Mecánica</h3></li>
+					<ul>
+						<li id="indexMov1d"><h4>Movimiento en una dimensión</h4></li>
+						<ul>
+							<li><h5><a href="fis-mec-cin1d-ave.html" class="enlaceNegro">La sombra del ave</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas2.png" width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoAvS" class="imgHecho"></h5></li>
+							
+							<li><h5><a href="fis-mec-cin1d-auto_semaforo.html" class="enlaceNegro">¡Semáforo!</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas3.png" width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoAutoSem" class="imgHecho"></h5></li>
+						</ul>
+						<li id="indexMov23d"><h4>Movimiento en dos y tres dimensiones</h4></li>
+						<ul>
+							<li><h5><a href="fis-mec-cin23d-gol_de_campo.html" class="enlaceNegro">Gol de campo</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas3.png" width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoGolDeCampo" class="imgHecho"></h5></li>
+							
+							<li><h5><a href="fis-mec-cin23d-cuerda.html" class="enlaceNegro">La honda</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas2.png" width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoCuer" class="imgHecho"></h5></li>
+							
+							<li><h5><a href="fis-mec-cin23d-escaleras.html" class="enlaceNegro">Carrera en las escaleras eléctricas</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas1.png" width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoEscEle" class="imgHecho"></h5></li>
+						</ul>
+						<li id="indexLeyes"><h4>Leyes de Newton</h4></li>
+						<ul>
+							<li><h5><a href="fis-mec-leyes-globo_aero.html" class="enlaceNegro">Globo aerostático</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas2.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoGloboAero" class="imgHecho"></h5></li>
+							
+							<li><h5><a href="fis-mec-leyes-cono.html" class="enlaceNegro">El cubo y el cono</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas3.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoCono" class="imgHecho"></h5></li>
+							
+							<li><h5><a href="fis-mec-leyes-rueda_fortuna.html" class="enlaceNegro">La rueda de la fortuna</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas1.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoRuedaFortuna" class="imgHecho"></h5></li>
+						</ul>
+						<li id="indexEnergia"><h4>Trabajo y energía</h4></li>
+						<ul>
+							<li><h5><a href="fis-mec-ener-pelota_rebote.html" class="enlaceNegro">Una pelota rebotando</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas3.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoPelotaRebote" class="imgHecho"></h5></li>
+							
+							<li><h5><a href="fis-mec-ener-resorte.html" class="enlaceNegro">La compresión de un resorte</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas4.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoResorte" class="imgHecho"></h5></li>
+							
+							<li><h5><a href="fis-mec-ener-potencia_regulador.html" class="enlaceNegro">Potencia en un regulador</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas4.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoRegulador" class="imgHecho"></h5></li>
+						</ul>
+						<li id="indexMomento"><h4>Impulso y cantidad de movimiento</h4></li>
+						<ul>
+						
+							<li><h5><a href="fis-mec-mom-proteger_nido.html" class="enlaceNegro">Protegiendo el nido</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas2.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoNido" class="imgHecho"></h5></li>
+						
+							<li><h5><a href="fis-mec-mom-gato_brincando.html" class="enlaceNegro">Un gato brincando</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas5.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoGatoBrincando" class="imgHecho"></h5></li>
+							
+							<li><h5><a href="fis-mec-mom-canoa.html" class="enlaceNegro">Caminando en la canoa</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas3.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoCanoa" class="imgHecho"></h5></li>
+						</ul>
+						<li id="indexRotaciones"><h4>Rotación de cuerpos rígidos</h4></li>
+						<ul>
+							<li><h5><a href="fis-mec-rot-disco.html" class="enlaceNegro">El disco se rompió...</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas2.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoDisco" class="imgHecho"></h5></li>
+							<li><h5><a href="fis-mec-rot-bola_billar.html" class="enlaceNegro">En el billar</a>&nbsp; &nbsp; &nbsp;<img src="img/estrellas5.png"width="10%" align="center">&nbsp; &nbsp; &nbsp;<img src="img/hecho.png" width="3%" align="center" id="hechoBolaBillar" class="imgHecho"></h5></li>
+						</ul>
+					</ul>
+				</ul>
+			</ul>
+		</main>		
+		
+		<footer>
+			<div class="piepagina" id="imgudg">
+				
+				<img src="img/udg.png" width="100%" align="top">
+			</div>
+			<div class="piepagina" id="enlacespie">
+				<ul>
+					<br>
+					<li><a href="acerca-de.html" class="enlaceNegro">Acerca de...</a>
+					<li><a href="https://www.udg.mx/" class="enlaceNegro">Universidad de Guadalajara</a></li>
+					<li><a href="http://www.cucei.udg.mx/" class="enlaceNegro">Centro Universitario de Ciencias Exactas e Ingenierías</a></li>
+					<li><a href="http://fisica.cucei.udg.mx/" class="enlaceNegro">Departamento de Física</a></li>
+					<!--<li><a href="mailto:simulate@udg.mx" class="enlaceNegro">simulate@udg.mx</a></li>-->
+				</ul>
+			</div>
+		</footer>
+		
+	</body>
+	
+
+</html>

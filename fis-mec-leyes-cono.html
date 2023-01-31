@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<!Descripción de la página en la búsqueda>
+		<meta name="description" content="Problemas animados de Física"/> 	
+		<!Ancho para dispositivo móvil>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+		
+		<!--Título del problema en la pestaña del navegador-->
+		<title>El cubo y el cono</title>
+		
+		<link rel="shortcut icon" href="img/favicon.png"/>
+		<link rel=stylesheet href="css/estilos.css" type="text/css"/>
+		<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
+</script>
+		<script src="js/fis-mec-leyes-cono.js"></script>
+		
+	</head>
+	
+	<body>		
+		<header> 
+			<div class="encabezado" id="titulo">
+				<h1><a href="index.html" class="enlaceNegro">Simúlate</a></h1>
+			</div>
+			<div class="encabezado">
+				<a href="index.html#indexMecanica" class="enlaceNegro">Mecánica</a>
+			</div>
+			<div class="encabezado">
+				<a href="index.html#indexLeyes" class="enlaceNegro">Leyes de Newton</a>
+			</div>
+		</header>
+		
+		<main>
+			<div class="lin" id="problema">
+				<div id="enunciado">
+					<div id="titEnun">
+						<!--Título del problema en la página-->
+						<h2>El cubo y el cono</h2>
+						<img src="img/estrellas3.png" width="37%" align="top">
+					</div>
+					<div id="imgHecho">
+						<img id="imgCorrecto" src="img/hecho.png" width="30%" align="top">
+					</div>
+					<div id="btnNav">
+						<a href="fis-mec-leyes-globo_aero.html"><img src="img/anterior.png" width="30%" align="top"></a>
+						<a href="index.html"><img src="img/home.png" width="30%" align="top"></a>
+						<a href="fis-mec-leyes-rueda_fortuna.html"><img src="img/siguiente.png" width="30%" align="top"></a>	
+					</div>
+					<br>
+					<!--Enunciado del problema
+					
+					Ubica el/los concepto(s) que están explícitamente en el enunciado y ponlos entre los <a> como aquí está la palabra velocidad. El número entre paréntesis del 'escribeApoyo' es el número del concepto cómo lo ordenaste en el .js (empezando desde cero).
+					
+					Los valores de las variables no se ponen aquí. Solo debes poner los <span> y nombrarlos como quieras con el 'id'. Este nombre es el que se hace referencia en el .js
+					
+					Texto en latex entre \( ... \)
+					
+					Las unidades entre <b> solo por formato.
+					-->
+					Un cubo de masa  <span id="txtM"></span> <b>g</b> está en el interior de un cono invertido que está girando a una  <a href="javascript:escribeApoyo(2)">frecuencia</a> de <span id="txtNu"></span> <b>rev/s</b>. Esta frecuencia es tal que si girara un poco más rápido, el cubo se deslizaría. El coeficiente de <a href="javascript:escribeApoyo(0)">fricción estática</a> entre el cubo y el cono es <span id="txtMu"></span>. Si el cubo está a una distancia perpendicular de <span id="txtR"></span> <b>m</b> del eje de rotación, calcule el ángulo \(\theta\) que existe entre el cono y la horizontal.
+				</div>
+				<div id="opciones">
+					<br>
+					<div>
+						<button type="button" id="opcA" onclick="eligeOpcion('opcA')"></button>
+
+						<button type="button" id="opcB" onclick="eligeOpcion('opcB')"></button>
+					</div>
+					<div>
+						<button type="button" id="opcC" onclick="eligeOpcion('opcC')"></button>
+
+						<button type="button" id="opcD" onclick="eligeOpcion('opcD')"></button>
+					</div>
+				</div>
+				<div align="center" id="cajaBtnAyuda">
+					<br>
+					<button type="button" id="btnAyuda" onclick="escribeAyuda()">Aiúdame Papú!!</button>
+				</div>
+				<div>
+					<figure>
+					<!--Reemplaza el AutoSem-->
+						<img src="img/embudo0.png" align="center" width="120%" id="animacion">
+					</figure>
+				</div>
+				<div>
+					*Las imágenes son meramente ilustrativas; no representan estrictamente las escalas ni los datos del problema.
+				</div>
+			</div>
+			<div class="lin" id="apoyo"> </div>
+		</main>
+		
+		<footer>
+			<div class="piepagina" id="imgudg">			
+				<img src="img/udg.png" width="100%" align="top">
+			</div>
+			<div class="piepagina" id="enlacespie">
+				<ul>
+					<br>
+					<li><a href="acerca-de.html" class="enlaceNegro">Acerca de...</a>
+					<li><a href="https://www.udg.mx/" class="enlaceNegro">Universidad de Guadalajara</a></li>
+					<li><a href="http://www.cucei.udg.mx/" class="enlaceNegro">Centro Universitario de Ciencias Exactas e Ingenierías</a></li>
+					<li><a href="http://fisica.cucei.udg.mx/" class="enlaceNegro">Departamento de Física</a></li>
+					<!--<li><a href="mailto:simulate@udg.mx" class="enlaceNegro">simulate@udg.mx</a></li>-->
+				</ul>
+			</div>
+		</footer>
+		
+	</body>
+	
+
+
+
+</html>
